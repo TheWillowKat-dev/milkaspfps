@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>milkas pfps</title>
+<style>
+:root{--card:#1e1238;--pink:#ff8fd8;--lav:#b79bff;--text:#f5eeff;--muted:#b9a9d9}
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,Helvetica,sans-serif;background:#07031a;color:var(--text);line-height:1.5}
+#bg{position:fixed;top:0;left:0;width:100%;height:100%;z-index:-1;pointer-events:none}
+#fx{position:fixed;top:0;left:0;width:100%;height:100%;z-index:9999;pointer-events:none}
+header{position:sticky;top:0;background:#0a0420dd;padding:12px 20px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;z-index:5}
+header b{font-size:1.2rem;color:#ff3b6b;animation:rgb 5s linear infinite}
+nav a{color:var(--text);text-decoration:none;margin-left:14px}
+nav a:hover{color:var(--pink)}
+section{max-width:900px;margin:0 auto;padding:40px 20px}
+.hero{text-align:center;padding-top:70px}
+h1{font-size:2.6rem;margin:0;color:#ff3b6b;text-shadow:0 0 18px #ff3b6baa;animation:rgb 5s linear infinite}
+@keyframes rgb{from{filter:hue-rotate(0deg)}to{filter:hue-rotate(360deg)}}
+@media (prefers-reduced-motion: reduce){header b,h1{animation:none}}
+h2{color:var(--lav)}
+.btn{display:inline-block;background:linear-gradient(90deg,#ff8fd8,#b79bff);color:#1a0b33;font-weight:bold;padding:12px 26px;border:0;border-radius:30px;cursor:pointer;text-decoration:none;font-size:1rem}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px}
+.card{background:#1e1238e6;border-radius:14px;padding:18px}
+.ph{aspect-ratio:1;display:flex;align-items:center;justify-content:center;color:var(--muted);border:2px dashed #4b3a7a;border-radius:14px}
+.ph img{width:100%;height:100%;object-fit:cover;border-radius:12px}
+.tags{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin:14px 0}
+.tags span{background:var(--card);border:1px solid #4b3a7a;border-radius:20px;padding:4px 14px;font-size:.9rem}
+label{display:block;margin-top:14px;font-weight:bold}
+input,select,textarea{width:100%;padding:10px;border-radius:8px;border:1px solid #4b3a7a;background:#120a24;color:var(--text);font-size:1rem}
+.check{display:flex;gap:8px;align-items:flex-start;font-weight:normal}
+.check input{width:auto;margin-top:5px}
+.hidden{display:none}
+.note{color:var(--muted);font-size:.9rem}
+a{color:var(--pink)}
+footer{text-align:center;color:var(--muted);padding:30px}
+</style>
+</head>
+<body>
+
+<canvas id="bg"></canvas>
+<canvas id="fx"></canvas>
+
+<header>
+  <b>milkas pfps</b>
+  <nav>
+    <a href="#gallery">Gallery</a>
+    <a href="#how">How it works</a>
+    <a href="#order">Order</a>
+    <a href="#status">Order status</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <h1>milkas pfps</h1>
+  <p style="font-size:1.3rem">this is low-key the milka-way ✨</p>
+  <p>Hand-drawn art of your character, made just for you.<br>Every piece is one of a kind and never copied. Use it for anything you want!</p>
+  <div class="tags">
+    <span>Profile pictures</span>
+    <span>Banners</span>
+    <span>Icons</span>
+    <span>Anything you choose</span>
+  </div>
+  <a class="btn" href="#order">Order a drawing</a>
+</section>
+
+<section id="gallery">
+  <h2>Gallery</h2>
+  <div class="grid">
+    <div class="ph">Drawing #1</div>
+    <div class="ph">Drawing #2</div>
+    <div class="ph">Drawing #3</div>
+    <div class="ph">Drawing #4</div>
+    <div class="ph">Drawing #5</div>
+    <div class="ph">Drawing #6</div>
+  </div>
+  <p class="note">All hand drawn. I do both boy and girl characters!</p>
+</section>
+
+<section id="how">
+  <h2>How it works</h2>
+  <div class="grid">
+    <div class="card"><b>1. Order</b><br>Fill out the order form below.</div>
+    <div class="card"><b>2. Pay first</b><br>Send Robux (friend me first), or offer an art trade of your OC.</div>
+    <div class="card"><b>3. I draw it</b><br>Ready in 1-2 days, sometimes the same day.</div>
+    <div class="card"><b>4. Delivery</b><br>I email your drawing to the email you gave me.</div>
+  </div>
+
+  <h2>What you get</h2>
+  <div class="card">
+    <p>Price: <b>XXX Robux</b> per drawing (one at a time)</p>
+    <p><b>Every drawing is hand drawn and one of a kind.</b> I never make the same piece twice, so yours will be the only one.</p>
+    <p>Poses, backgrounds, and the face are all included. Any background theme you want!<br>
+    I don't do props.</p>
+    <p>Use your drawing for anything you choose: a profile picture, a banner, an icon, and more.</p>
+    <p>I draw your character from <b>any game or app</b>, like Roblox, Minecraft, or Fortnite, and I also draw <b>Miis</b>. If you want a Mii, email me a colored drawing of what you want your Mii to look like.</p>
+    <p>Want a small change after you get it? I can do minor fixes for free.</p>
+    <p><b>Art trade:</b> I'll trade for a drawing of your OC, but it has to be good, not sloppy.</p>
+    <p><b>Robux:</b> Customers always pay first. If you pay with Robux, friend me on Roblox first: <b>thewillowkat</b></p>
+    <p><b>No refunds</b>, because someone could say they didn't like it just to get their payment back.</p>
+  </div>
+</section>
+
+<section id="order">
+  <h2>Order a drawing</h2>
+  <form action="https://formsubmit.co/camronwowie@gmail.com" method="POST">
+    <input type="hidden" name="_subject" value="New drawing order!">
+    <input type="hidden" name="_template" value="table">
+    <input type="hidden" name="_captcha" value="false">
+    <input type="text" name="_honey" style="display:none">
+
+    <label>What platform or game is your character from?</label>
+    <select name="platform" id="platform">
+      <option>Roblox</option>
+      <option>Mii</option>
+      <option>Minecraft</option>
+      <option>Fortnite</option>
+      <option>My own original character</option>
+      <option>Other</option>
+    </select>
+
+    <div id="othergroup" class="hidden">
+      <label>Which game or app?</label>
+      <input type="text" name="other_platform" id="otherinput">
+    </div>
+
+    <label>Your username (or character name)</label>
+    <input type="text" name="username" required>
+
+    <label>Your email (I send your drawing here, it can be an alt account)</label>
+    <input type="email" name="customer_email" required>
+
+    <label>What will you use it for?</label>
+    <select name="use">
+      <option>Profile picture</option>
+      <option>Banner</option>
+      <option>Icon</option>
+      <option>Something else</option>
+    </select>
+
+    <label>Describe your character (outfit, hair, anything I should know)</label>
+    <textarea name="character_details" rows="3"></textarea>
+
+    <p class="note hidden" id="miinote">For a Mii, email a colored drawing of what you want your Mii to look like to camronwowie@gmail.com after you order.</p>
+
+    <label>Finish</label>
+    <select name="texture">
+      <option>Glossy</option>
+      <option>Sparkly</option>
+    </select>
+
+    <label>Background theme</label>
+    <input type="text" name="background" placeholder="Any theme: space, flowers, pink, etc.">
+
+    <label>Pose ideas (optional)</label>
+    <input type="text" name="pose">
+
+    <label>Payment</label>
+    <select name="payment">
+      <option>Robux (I will friend thewillowkat first)</option>
+      <option>Art trade of my OC</option>
+      <option>Something else (email me first to work it out)</option>
+    </select>
+
+    <label class="check"><input type="checkbox" name="agree_pay_first" required> I understand I pay first, before the drawing is made.</label>
+    <label class="check"><input type="checkbox" name="agree_no_refund" required> I understand there are no refunds.</label>
+    <label class="check"><input type="checkbox" name="subscribed" required> I will subscribe to @infamous_milkaa on YouTube.</label>
+
+    <p><button class="btn" type="submit">Send order</button></p>
+    <p class="note">Your email is only used to send your drawing.</p>
+  </form>
+</section>
+
+<section id="status">
+  <h2>Order status</h2>
+  <div class="card">
+    <label style="margin-top:0">Your username</label>
+    <input type="text" id="statusname">
+    <p><button class="btn" type="button" onclick="checkStatus()">Check</button></p>
+    <p id="statusresult"></p>
+  </div>
+</section>
+
+<footer>
+  YouTube: <a href="https://www.youtube.com/@infamous_milkaa">@infamous_milkaa</a> &middot;
+  Roblox: thewillowkat<br>
+  &copy; milkas pfps
+</footer>
+
+<script>
+// ===== UPDATE THIS LIST BY HAND =====
+// status can be: "Waiting for payment", "In progress", or "Delivered"
+var ORDERS = [
+  { user: "exampleuser", status: "In progress" }
+];
+
+function checkStatus() {
+  var name = document.getElementById("statusname").value.trim().toLowerCase();
+  var out = document.getElementById("statusresult");
+  if (!name) { out.textContent = "Type your username first."; return; }
+  var found = null;
+  for (var i = 0; i < ORDERS.length; i++) {
+    if (ORDERS[i].user.toLowerCase() === name) { found = ORDERS[i]; }
+  }
+  out.textContent = found
+    ? "Status: " + found.status
+    : "I can't find that username. It may not be added yet, so check back soon!";
+}
+
+document.getElementById("platform").addEventListener("change", function () {
+  var mii = document.getElementById("miinote");
+  var other = document.getElementById("othergroup");
+  var otherInput = document.getElementById("otherinput");
+
+  if (this.value === "Mii") { mii.classList.remove("hidden"); }
+  else { mii.classList.add("hidden"); }
+
+  if (this.value === "Other") {
+    other.classList.remove("hidden");
+    otherInput.required = true;
+  } else {
+    other.classList.add("hidden");
+    otherInput.required = false;
+  }
+});
+
+// ===== GALAXY BACKGROUND + MOUSE SPARKLES =====
+var bg = document.getElementById("bg");
+var bctx = bg.getContext("2d");
+var fx = document.getElementById("fx");
+var fctx = fx.getContext("2d");
+var W = 0, H = 0;
+var stars = [];
+var parts = [];
+var neb = null;
+var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+var STAR_COLORS = ["#ffffff", "#ffd6f5", "#cdbdff", "#bfe3ff"];
+var SPARK_COLORS = ["#ffffff", "#ff8fd8", "#b79bff", "#8fd3ff"];
+
+function rand(a, b) { return a + Math.random() * (b - a); }
+function pick(arr) { return arr[Math.floor(Math.random() * arr.length)]; }
+
+function buildNebula() {
+  neb = document.createElement("canvas");
+  neb.width = W;
+  neb.height = H;
+  var c = neb.getContext("2d");
+
+  var base = c.createLinearGradient(0, 0, 0, H);
+  base.addColorStop(0, "#0a0522");
+  base.addColorStop(1, "#05020f");
+  c.fillStyle = base;
+  c.fillRect(0, 0, W, H);
+
+  // faint milky-way band
+  c.save();
+  c.translate(W / 2, H / 2);
+  c.rotate(-0.5);
+  var band = c.createLinearGradient(0, -H * 0.3, 0, H * 0.3);
+  band.addColorStop(0, "rgba(255,200,255,0)");
+  band.addColorStop(0.5, "rgba(255,200,255,0.10)");
+  band.addColorStop(1, "rgba(255,200,255,0)");
+  c.fillStyle = band;
+  c.fillRect(-W, -H * 0.3, W * 2, H * 0.6);
+  c.restore();
+
+  // colored nebula clouds
+  var blobs = [
+    { x: 0.2, y: 0.15, r: 0.55, c: "rgba(150,80,255,0.35)" },
+    { x: 0.8, y: 0.3,  r: 0.5,  c: "rgba(255,90,200,0.25)" },
+    { x: 0.5, y: 0.85, r: 0.6,  c: "rgba(60,110,255,0.28)" },
+    { x: 0.1, y: 0.8,  r: 0.4,  c: "rgba(255,120,220,0.18)" }
+  ];
+  var big = Math.max(W, H);
+  for (var i = 0; i < blobs.length; i++) {
+    var b = blobs[i];
+    var g = c.createRadialGradient(b.x * W, b.y * H, 0, b.x * W, b.y * H, b.r * big);
+    g.addColorStop(0, b.c);
+    g.addColorStop(1, "rgba(0,0,0,0)");
+    c.fillStyle = g;
+    c.fillRect(0, 0, W, H);
+  }
+}
+
+function buildStars() {
+  stars = [];
+  var n = Math.min(350, Math.floor((W * H) / 4500));
+  for (var i = 0; i < n; i++) {
+    stars.push({
+      x: Math.random() * W,
+      y: Math.random() * H,
+      r: rand(0.3, 1.6),
+      p: rand(0, 6.28),
+      s: rand(0.001, 0.004),
+      c: pick(STAR_COLORS)
+    });
+  }
+}
+
+function resize() {
+  W = window.innerWidth;
+  H = window.innerHeight;
+  bg.width = W; bg.height = H;
+  fx.width = W; fx.height = H;
+  buildNebula();
+  buildStars();
+}
+
+function drawSparkle(ctx, x, y, r) {
+  ctx.beginPath();
+  ctx.moveTo(x, y - r);
+  ctx.quadraticCurveTo(x, y, x + r, y);
+  ctx.quadraticCurveTo(x, y, x, y + r);
+  ctx.quadraticCurveTo(x, y, x - r, y);
+  ctx.quadraticCurveTo(x, y, x, y - r);
+  ctx.fill();
+}
+
+function spawn(x, y) {
+  if (reduce) return;
+  for (var i = 0; i < 2; i++) {
+    parts.push({
+      x: x + rand(-4, 4),
+      y: y + rand(-4, 4),
+      vx: rand(-0.8, 0.8),
+      vy: rand(-0.8, 0.8),
+      life: 1,
+      size: rand(4, 10),
+      color: pick(SPARK_COLORS)
+    });
+  }
+  if (parts.length > 150) { parts.splice(0, parts.length - 150); }
+}
+
+window.addEventListener("mousemove", function (e) { spawn(e.clientX, e.clientY); });
+window.addEventListener("touchmove", function (e) {
+  if (e.touches && e.touches[0]) { spawn(e.touches[0].clientX, e.touches[0].clientY); }
+}, { passive: true });
+window.addEventListener("resize", resize);
+
+function loop(t) {
+  // background
+  bctx.drawImage(neb, 0, 0);
+  for (var i = 0; i < stars.length; i++) {
+    var s = stars[i];
+    var a = reduce ? 0.8 : 0.55 + 0.45 * Math.sin(t * s.s + s.p);
+    bctx.globalAlpha = a;
+    bctx.fillStyle = s.c;
+    bctx.beginPath();
+    bctx.arc(s.x, s.y, s.r, 0, 6.2832);
+    bctx.fill();
+  }
+  bctx.globalAlpha = 1;
+
+  // sparkles
+  fctx.clearRect(0, 0, W, H);
+  for (var j = parts.length - 1; j >= 0; j--) {
+    var p = parts[j];
+    p.x += p.vx;
+    p.y += p.vy;
+    p.vy += 0.02;
+    p.life -= 0.02;
+    if (p.life <= 0) { parts.splice(j, 1); continue; }
+    fctx.globalAlpha = p.life;
+    fctx.fillStyle = p.color;
+    drawSparkle(fctx, p.x, p.y, p.size * p.life + 1);
+  }
+  fctx.globalAlpha = 1;
+
+  requestAnimationFrame(loop);
+}
+
+resize();
+requestAnimationFrame(loop);
+</script>
+</body>
+</html>
