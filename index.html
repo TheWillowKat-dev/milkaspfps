@@ -4,37 +4,61 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>milkas pfps</title>
+<script>document.documentElement.className += " js";</script>
 <style>
-:root{--card:#1e1238;--pink:#ff8fd8;--lav:#b79bff;--text:#f5eeff;--muted:#b9a9d9}
+:root{--h:330;--card:#1e1238;--pink:#ff8fd8;--lav:#b79bff;--text:#f5eeff;--muted:#b9a9d9}
 *{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body,a,button,select,label{cursor:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='12' fill='%23ff8fd8' fill-opacity='.25'/%3E%3Cpath d='M16 3L19 13L29 16L19 19L16 29L13 19L3 16L13 13Z' fill='%23ffffff' stroke='%23ff8fd8' stroke-width='1.5'/%3E%3C/svg%3E") 16 16, auto}
 body{margin:0;font-family:Arial,Helvetica,sans-serif;background:#07031a;color:var(--text);line-height:1.5}
 #bg{position:fixed;top:0;left:0;width:100%;height:100%;z-index:-1;pointer-events:none}
 #fx{position:fixed;top:0;left:0;width:100%;height:100%;z-index:9999;pointer-events:none}
-header{position:sticky;top:0;background:#0a0420dd;padding:12px 20px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;z-index:5}
-header b{font-size:1.2rem;color:#ff3b6b;animation:rgb 5s linear infinite}
-nav a{color:var(--text);text-decoration:none;margin-left:14px}
-nav a:hover{color:var(--pink)}
+
+header{position:sticky;top:0;background:#0a0420dd;padding:12px 20px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;z-index:5;border-bottom:1px solid hsla(var(--h),100%,70%,.5)}
+header b{font-size:1.2rem;color:hsl(var(--h),100%,70%);text-shadow:0 0 12px hsla(var(--h),100%,60%,.6)}
+nav a{color:var(--text);text-decoration:none;margin-left:14px;transition:color .2s}
+nav a:hover{color:hsl(var(--h),100%,75%)}
+
 section{max-width:900px;margin:0 auto;padding:40px 20px}
 .hero{text-align:center;padding-top:70px}
-h1{font-size:2.6rem;margin:0;color:#ff3b6b;text-shadow:0 0 18px #ff3b6baa;animation:rgb 5s linear infinite}
-@keyframes rgb{from{filter:hue-rotate(0deg)}to{filter:hue-rotate(360deg)}}
-@media (prefers-reduced-motion: reduce){header b,h1{animation:none}}
-h2{color:var(--lav)}
-.btn{display:inline-block;background:linear-gradient(90deg,#ff8fd8,#b79bff);color:#1a0b33;font-weight:bold;padding:12px 26px;border:0;border-radius:30px;cursor:pointer;text-decoration:none;font-size:1rem}
+h1{font-size:2.6rem;margin:0;color:hsl(var(--h),100%,70%);text-shadow:0 0 18px hsla(var(--h),100%,60%,.7)}
+h2{color:hsl(calc(var(--h) + 40),100%,80%);text-shadow:0 0 10px hsla(var(--h),100%,60%,.35)}
+
+.btn{display:inline-block;background:linear-gradient(90deg,hsl(var(--h),100%,75%),hsl(calc(var(--h) + 60),100%,75%));color:#1a0b33;font-weight:bold;padding:12px 26px;border:0;border-radius:30px;text-decoration:none;font-size:1rem;transition:transform .2s,box-shadow .2s;box-shadow:0 0 14px hsla(var(--h),100%,65%,.5)}
+.btn:hover{transform:scale(1.06);box-shadow:0 0 26px hsla(var(--h),100%,65%,.85)}
+
 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px}
-.card{background:#1e1238e6;border-radius:14px;padding:18px}
-.ph{aspect-ratio:1;display:flex;align-items:center;justify-content:center;color:var(--muted);border:2px dashed #4b3a7a;border-radius:14px}
+.card{background:#1e1238e6;border-radius:14px;padding:18px;border:2px solid hsla(var(--h),100%,70%,.7);box-shadow:0 0 14px hsla(var(--h),100%,60%,.25)}
+.grid .card{transition:transform .25s ease,box-shadow .25s ease}
+.grid .card:hover{transform:translateY(-8px);box-shadow:0 12px 30px hsla(var(--h),100%,65%,.55)}
+
+.ph{aspect-ratio:1;display:flex;align-items:center;justify-content:center;color:var(--muted);border:2px dashed hsla(var(--h),100%,70%,.5);border-radius:14px;transition:transform .25s ease,box-shadow .25s ease}
+.ph:hover{transform:translateY(-8px) scale(1.02);box-shadow:0 12px 30px hsla(var(--h),100%,65%,.55)}
 .ph img{width:100%;height:100%;object-fit:cover;border-radius:12px}
+
 .tags{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin:14px 0}
-.tags span{background:var(--card);border:1px solid #4b3a7a;border-radius:20px;padding:4px 14px;font-size:.9rem}
+.tags span{background:var(--card);border:1px solid hsla(var(--h),100%,70%,.7);border-radius:20px;padding:4px 14px;font-size:.9rem}
+
 label{display:block;margin-top:14px;font-weight:bold}
-input,select,textarea{width:100%;padding:10px;border-radius:8px;border:1px solid #4b3a7a;background:#120a24;color:var(--text);font-size:1rem}
+input,select,textarea{width:100%;padding:10px;border-radius:8px;border:1px solid #4b3a7a;background:#120a24;color:var(--text);font-size:1rem;outline:none;transition:border-color .2s,box-shadow .2s}
+input:focus,select:focus,textarea:focus{border-color:hsl(var(--h),100%,70%);box-shadow:0 0 10px hsla(var(--h),100%,65%,.5)}
 .check{display:flex;gap:8px;align-items:flex-start;font-weight:normal}
 .check input{width:auto;margin-top:5px}
 .hidden{display:none}
 .note{color:var(--muted);font-size:.9rem}
-a{color:var(--pink)}
+a{color:hsl(var(--h),100%,80%)}
 footer{text-align:center;color:var(--muted);padding:30px}
+
+/* fade-in on scroll */
+.js .reveal{opacity:0;transform:translateY(40px);transition:opacity .9s ease,transform .9s ease}
+.js .reveal.show{opacity:1;transform:none}
+
+@media (prefers-reduced-motion: reduce){
+  .js .reveal{opacity:1;transform:none;transition:none}
+  .grid .card,.ph,.btn{transition:none}
+  .grid .card:hover,.ph:hover,.btn:hover{transform:none}
+  html{scroll-behavior:auto}
+}
 </style>
 </head>
 <body>
@@ -52,7 +76,7 @@ footer{text-align:center;color:var(--muted);padding:30px}
   </nav>
 </header>
 
-<section class="hero">
+<section class="hero reveal">
   <h1>milkas pfps</h1>
   <p style="font-size:1.3rem">this is low-key the milka-way ✨</p>
   <p>Hand-drawn art of your character, made just for you.<br>Every piece is one of a kind and never copied. Use it for anything you want!</p>
@@ -65,7 +89,7 @@ footer{text-align:center;color:var(--muted);padding:30px}
   <a class="btn" href="#order">Order a drawing</a>
 </section>
 
-<section id="gallery">
+<section id="gallery" class="reveal">
   <h2>Gallery</h2>
   <div class="grid">
     <div class="ph">Drawing #1</div>
@@ -78,7 +102,7 @@ footer{text-align:center;color:var(--muted);padding:30px}
   <p class="note">All hand drawn. I do both boy and girl characters!</p>
 </section>
 
-<section id="how">
+<section id="how" class="reveal">
   <h2>How it works</h2>
   <div class="grid">
     <div class="card"><b>1. Order</b><br>Fill out the order form below.</div>
@@ -102,7 +126,7 @@ footer{text-align:center;color:var(--muted);padding:30px}
   </div>
 </section>
 
-<section id="order">
+<section id="order" class="reveal">
   <h2>Order a drawing</h2>
   <form action="https://formsubmit.co/camronwowie@gmail.com" method="POST">
     <input type="hidden" name="_subject" value="New drawing order!">
@@ -172,7 +196,7 @@ footer{text-align:center;color:var(--muted);padding:30px}
   </form>
 </section>
 
-<section id="status">
+<section id="status" class="reveal">
   <h2>Order status</h2>
   <div class="card">
     <label style="margin-top:0">Your username</label>
@@ -225,7 +249,26 @@ document.getElementById("platform").addEventListener("change", function () {
   }
 });
 
-// ===== GALAXY BACKGROUND + MOUSE SPARKLES =====
+// ===== FADE IN ON SCROLL =====
+var revs = document.querySelectorAll(".reveal");
+var obs = null;
+if ("IntersectionObserver" in window) {
+  obs = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (e.isIntersecting) {
+        e.target.classList.add("show");
+        obs.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.1 });
+}
+for (var r = 0; r < revs.length; r++) {
+  if (obs) { obs.observe(revs[r]); }
+  else { revs[r].classList.add("show"); }
+}
+
+// ===== GALAXY, PLANETS, SHOOTING STARS, SPARKLES, RAINBOW =====
+var root = document.documentElement;
 var bg = document.getElementById("bg");
 var bctx = bg.getContext("2d");
 var fx = document.getElementById("fx");
@@ -233,11 +276,22 @@ var fctx = fx.getContext("2d");
 var W = 0, H = 0;
 var stars = [];
 var parts = [];
+var shoots = [];
 var neb = null;
+var hue = 330;
+var nextShoot = 3000;
 var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
 var STAR_COLORS = ["#ffffff", "#ffd6f5", "#cdbdff", "#bfe3ff"];
 var SPARK_COLORS = ["#ffffff", "#ff8fd8", "#b79bff", "#8fd3ff"];
+
+// fx/fy = position as a fraction of the screen, rr = size, sp = drift speed
+var planets = [
+  { fx: 0.15, fy: 0.22, rr: 0.07,  sp: 0.00004, c1: "#e9c9ff", c2: "#6a35c9", ring: "rgba(255,220,255,0.55)", ph: 0 },
+  { fx: 0.70, fy: 0.55, rr: 0.045, sp: 0.00006, c1: "#ffd0ea", c2: "#d1428f", ph: 1.5 },
+  { fx: 0.40, fy: 0.82, rr: 0.03,  sp: 0.00008, c1: "#f4f4fb", c2: "#8a8aa6", craters: true, ph: 3 },
+  { fx: 0.90, fy: 0.12, rr: 0.035, sp: 0.00005, c1: "#bfe3ff", c2: "#2d63d6", ph: 4.5 }
+];
 
 function rand(a, b) { return a + Math.random() * (b - a); }
 function pick(arr) { return arr[Math.floor(Math.random() * arr.length)]; }
@@ -254,7 +308,6 @@ function buildNebula() {
   c.fillStyle = base;
   c.fillRect(0, 0, W, H);
 
-  // faint milky-way band
   c.save();
   c.translate(W / 2, H / 2);
   c.rotate(-0.5);
@@ -266,7 +319,6 @@ function buildNebula() {
   c.fillRect(-W, -H * 0.3, W * 2, H * 0.6);
   c.restore();
 
-  // colored nebula clouds
   var blobs = [
     { x: 0.2, y: 0.15, r: 0.55, c: "rgba(150,80,255,0.35)" },
     { x: 0.8, y: 0.3,  r: 0.5,  c: "rgba(255,90,200,0.25)" },
@@ -308,6 +360,57 @@ function resize() {
   buildStars();
 }
 
+function drawPlanet(p, t) {
+  var r = p.rr * Math.min(W, H);
+  var x = p.fx * W;
+  var y = p.fy * H + (reduce ? 0 : Math.sin(t * 0.0004 + p.ph) * 12);
+
+  bctx.globalAlpha = 0.9;
+
+  if (p.ring) {
+    bctx.strokeStyle = p.ring;
+    bctx.lineWidth = r * 0.18;
+    bctx.beginPath();
+    bctx.ellipse(x, y, r * 1.8, r * 0.5, -0.35, Math.PI, 2 * Math.PI);
+    bctx.stroke();
+  }
+
+  var g = bctx.createRadialGradient(x - r * 0.35, y - r * 0.35, r * 0.1, x, y, r);
+  g.addColorStop(0, p.c1);
+  g.addColorStop(1, p.c2);
+  bctx.fillStyle = g;
+  bctx.beginPath();
+  bctx.arc(x, y, r, 0, 6.2832);
+  bctx.fill();
+
+  if (p.craters) {
+    bctx.fillStyle = "rgba(0,0,0,0.15)";
+    bctx.beginPath(); bctx.arc(x + r * 0.3, y + r * 0.2, r * 0.22, 0, 6.2832); bctx.fill();
+    bctx.beginPath(); bctx.arc(x - r * 0.35, y + r * 0.35, r * 0.15, 0, 6.2832); bctx.fill();
+    bctx.beginPath(); bctx.arc(x + r * 0.05, y - r * 0.4, r * 0.12, 0, 6.2832); bctx.fill();
+  }
+
+  if (p.ring) {
+    bctx.strokeStyle = p.ring;
+    bctx.lineWidth = r * 0.18;
+    bctx.beginPath();
+    bctx.ellipse(x, y, r * 1.8, r * 0.5, -0.35, 0, Math.PI);
+    bctx.stroke();
+  }
+
+  bctx.globalAlpha = 1;
+}
+
+function spawnShoot() {
+  shoots.push({
+    x: rand(W * 0.1, W * 0.9),
+    y: rand(0, H * 0.4),
+    vx: rand(9, 14),
+    vy: rand(4, 7),
+    life: 1
+  });
+}
+
 function drawSparkle(ctx, x, y, r) {
   ctx.beginPath();
   ctx.moveTo(x, y - r);
@@ -328,7 +431,7 @@ function spawn(x, y) {
       vy: rand(-0.8, 0.8),
       life: 1,
       size: rand(4, 10),
-      color: pick(SPARK_COLORS)
+      color: Math.random() < 0.5 ? "hsl(" + Math.round(hue) + ",100%,75%)" : pick(SPARK_COLORS)
     });
   }
   if (parts.length > 150) { parts.splice(0, parts.length - 150); }
@@ -341,8 +444,24 @@ window.addEventListener("touchmove", function (e) {
 window.addEventListener("resize", resize);
 
 function loop(t) {
-  // background
+  // rainbow color shared by the whole page
+  if (!reduce) {
+    hue = (t * 0.04) % 360;
+    root.style.setProperty("--h", hue.toFixed(1));
+  }
+
+  // background and planets
   bctx.drawImage(neb, 0, 0);
+  for (var k = 0; k < planets.length; k++) {
+    var pl = planets[k];
+    if (!reduce) {
+      pl.fx += pl.sp;
+      if (pl.fx > 1.1) { pl.fx = -0.1; }
+    }
+    drawPlanet(pl, t);
+  }
+
+  // twinkling stars
   for (var i = 0; i < stars.length; i++) {
     var s = stars[i];
     var a = reduce ? 0.8 : 0.55 + 0.45 * Math.sin(t * s.s + s.p);
@@ -354,7 +473,35 @@ function loop(t) {
   }
   bctx.globalAlpha = 1;
 
-  // sparkles
+  // shooting stars
+  if (!reduce && t > nextShoot) {
+    spawnShoot();
+    nextShoot = t + rand(3000, 7000);
+  }
+  for (var m = shoots.length - 1; m >= 0; m--) {
+    var sh = shoots[m];
+    sh.x += sh.vx;
+    sh.y += sh.vy;
+    sh.life -= 0.012;
+    if (sh.life <= 0 || sh.x > W + 50 || sh.y > H + 50) { shoots.splice(m, 1); continue; }
+    var tx = sh.x - sh.vx * 7;
+    var ty = sh.y - sh.vy * 7;
+    var lg = bctx.createLinearGradient(sh.x, sh.y, tx, ty);
+    lg.addColorStop(0, "rgba(255,255,255," + sh.life + ")");
+    lg.addColorStop(1, "rgba(255,255,255,0)");
+    bctx.strokeStyle = lg;
+    bctx.lineWidth = 2;
+    bctx.beginPath();
+    bctx.moveTo(sh.x, sh.y);
+    bctx.lineTo(tx, ty);
+    bctx.stroke();
+    bctx.fillStyle = "rgba(255,255,255," + sh.life + ")";
+    bctx.beginPath();
+    bctx.arc(sh.x, sh.y, 2, 0, 6.2832);
+    bctx.fill();
+  }
+
+  // mouse sparkles
   fctx.clearRect(0, 0, W, H);
   for (var j = parts.length - 1; j >= 0; j--) {
     var p = parts[j];
