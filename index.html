@@ -49,14 +49,18 @@ input:focus,select:focus,textarea:focus{border-color:hsl(var(--h),100%,70%);box-
 a{color:hsl(var(--h),100%,80%)}
 footer{text-align:center;color:var(--muted);padding:30px}
 
+/* music button */
+#musicbtn{position:fixed;right:18px;bottom:18px;z-index:10000;background:#0a0420e6;color:#fff;border:2px solid hsla(var(--h),100%,70%,.8);border-radius:30px;padding:10px 16px;font-size:1rem;box-shadow:0 0 14px hsla(var(--h),100%,65%,.5);transition:transform .2s,box-shadow .2s}
+#musicbtn:hover{transform:scale(1.06);box-shadow:0 0 24px hsla(var(--h),100%,65%,.85)}
+
 /* fade-in on scroll */
 .js .reveal{opacity:0;transform:translateY(40px);transition:opacity .9s ease,transform .9s ease}
 .js .reveal.show{opacity:1;transform:none}
 
 @media (prefers-reduced-motion: reduce){
   .js .reveal{opacity:1;transform:none;transition:none}
-  .grid .card,.ph,.btn{transition:none}
-  .grid .card:hover,.ph:hover,.btn:hover{transform:none}
+  .grid .card,.ph,.btn,#musicbtn{transition:none}
+  .grid .card:hover,.ph:hover,.btn:hover,#musicbtn:hover{transform:none}
   html{scroll-behavior:auto}
 }
 </style>
@@ -65,6 +69,9 @@ footer{text-align:center;color:var(--muted);padding:30px}
 
 <canvas id="bg"></canvas>
 <canvas id="fx"></canvas>
+
+<audio id="music" src="music.mp3" loop preload="none"></audio>
+<button id="musicbtn" type="button" aria-label="Play or pause music">🎵 Music: Off</button>
 
 <header>
   <b>milkas pfps</b>
@@ -244,6 +251,24 @@ document.getElementById("platform").addEventListener("change", function () {
   } else {
     other.classList.add("hidden");
     otherInput.required = false;
+  }
+});
+
+// ===== MUSIC BUTTON =====
+var music = document.getElementById("music");
+var musicBtn = document.getElementById("musicbtn");
+music.volume = 0.3;
+
+musicBtn.addEventListener("click", function () {
+  if (music.paused) {
+    var pr = music.play();
+    if (pr && pr.catch) {
+      pr.catch(function () { musicBtn.textContent = "🎵 Music unavailable"; });
+    }
+    musicBtn.textContent = "🎵 Music: On";
+  } else {
+    music.pause();
+    musicBtn.textContent = "🎵 Music: Off";
   }
 });
 
